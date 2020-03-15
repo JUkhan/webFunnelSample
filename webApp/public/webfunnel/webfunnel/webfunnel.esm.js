@@ -1,0 +1,1 @@
+import{p as a,b as t}from"./p-9628d5a5.js";a().then(a=>t([["p-xxz14gmd",[[0,"web-funnel",{apiUrl:[1,"api-url"],getTitles:[1,"get-titles"],saveData:[1,"save-data"],logoImgPath:[1,"logo-img-path"],state:[32]}]]]],a));
