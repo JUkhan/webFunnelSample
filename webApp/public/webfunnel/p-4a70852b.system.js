@@ -1,0 +1,1 @@
+System.register(["./p-992076a6.system.js"],(function(){"use strict";var t,e;return{setters:[function(n){t=n.p;e=n.b}],execute:function(){t().then((function(t){return e([["p-1anlzsvm.system",[[0,"web-funnel",{apiUrl:[1,"api-url"],getInvitationInfo:[1,"get-invitation-info"],savePhoneNumber:[1,"save-phone-number"],logoImgPath:[1,"logo-img-path"],state:[32]}]]]],t)}))}}}));

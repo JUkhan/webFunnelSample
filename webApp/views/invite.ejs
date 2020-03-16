@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="kickit" />
+    <meta property="og:image" content="/images/logo.png" />
     <title>Invite</title>
     <link
       rel="stylesheet"
@@ -11,7 +13,7 @@
       crossorigin="anonymous"
     />
     <!-- <script type="module" src="/webfunnel/webfunnel.esm.js"></script> -->
-    <script src="/webfunnel/webfunnel/webfunnel.js"></script>
+    <script src="/webfunnel/webfunnel.js"></script>
   </head>
   <body>
     <div class="container">
@@ -22,7 +24,8 @@
           <web-funnel
             logo-img-path="/images/logo.png"
             api-url="http://localhost:3000"
-            get-titles="/getTitles"
+            get-invitation-info="/getInvitationInfo"
+            save-phone-number="/savePhoneNumber"
           ></web-funnel>
         </div>
       </div>

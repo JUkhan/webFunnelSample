@@ -1,1 +1,0 @@
-System.register(["./p-992076a6.system.js"],(function(){"use strict";var t,e;return{setters:[function(s){t=s.p;e=s.b}],execute:function(){t().then((function(t){return e([["p-lmysm65g.system",[[0,"web-funnel",{apiUrl:[1,"api-url"],getTitles:[1,"get-titles"],saveData:[1,"save-data"],logoImgPath:[1,"logo-img-path"],state:[32]}]]]],t)}))}}}));

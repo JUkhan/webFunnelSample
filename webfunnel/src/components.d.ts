@@ -18,7 +18,7 @@ export namespace Components {
     /**
     * api end point to get titles
     */
-    'getTitles': string;
+    'getInvitationInfo': string;
     /**
     * logo image path
     */
@@ -26,7 +26,7 @@ export namespace Components {
     /**
     * api end point to save data (mobile number and user token number)
     */
-    'saveData': string;
+    'savePhoneNumber': string;
   }
 }
 
@@ -52,7 +52,7 @@ declare namespace LocalJSX {
     /**
     * api end point to get titles
     */
-    'getTitles'?: string;
+    'getInvitationInfo'?: string;
     /**
     * logo image path
     */
@@ -60,7 +60,7 @@ declare namespace LocalJSX {
     /**
     * api end point to save data (mobile number and user token number)
     */
-    'saveData'?: string;
+    'savePhoneNumber'?: string;
   }
 
   interface IntrinsicElements {

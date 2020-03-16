@@ -1,2 +1,1 @@
 # webFunnelSample
-webFunnelSample
