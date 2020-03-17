@@ -19,12 +19,12 @@ app.get("/getInvitationInfo/:token", (req, res) => {
       "Help AXO donate $5,000 to St. Jude by joining them on kickit";
     data.title2 = "kick it with AXO on our friend map";
     data.category = "group";
-  } else if (req.params.token.includes("user")) {
+  } else if (req.params.token.includes("referral")) {
     data.title1 = "John is inviting you to join kickit";
     data.title2 = "Checkout John's upcoming plans on the kickit app!";
-    data.location = { lat: 0, lng: 0 };
-    data.image = "referrar user image path";
-    data.category = "user";
+    data.location = { lat: 23.8103, lng: 90.4125 };
+    data.image = "https://via.placeholder.com/50/24f355";
+    data.category = "referral";
   } else if (req.params.token.includes("event")) {
     data.title1 = 'You\'ve been invited to "Pregame"';
     data.address = "address";

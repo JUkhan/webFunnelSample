@@ -14,6 +14,7 @@
             api-url="http://localhost:3000"
             get-invitation-info="/getInvitationInfo"
             save-phone-number="/savePhoneNumber"
+            map-api-key="AIzaSyCTGaIAe7IC5zYoEPFRMHVOKs5dIwAKlTE"
           ></web-funnel>
 ```
 
@@ -39,6 +40,6 @@ https://github.com/JUkhan/webFunnelSample/blob/master/webApp/views/invite.ejs#L2
 
 http://localhost:4000/invite/uuid-group
 
-http://localhost:4000/invite/uuid-user
+http://localhost:4000/invite/uuid-referral
 
 http://localhost:4000/invite/uuid-event

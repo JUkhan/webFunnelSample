@@ -23,6 +23,7 @@ export namespace Components {
     * logo image path
     */
     'logoImgPath': string;
+    'mapApiKey': string;
     /**
     * api end point to save data (mobile number and user token number)
     */
@@ -57,6 +58,7 @@ declare namespace LocalJSX {
     * logo image path
     */
     'logoImgPath'?: string;
+    'mapApiKey'?: string;
     /**
     * api end point to save data (mobile number and user token number)
     */
