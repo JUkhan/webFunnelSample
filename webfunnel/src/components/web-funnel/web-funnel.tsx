@@ -1,4 +1,12 @@
-import { Component, Prop, h, State } from "@stencil/core";
+import {
+  Component,
+  Prop,
+  h,
+  State,
+  Method,
+  Event,
+  EventEmitter
+} from "@stencil/core";
 //import { format } from "../../utils/utils";
 
 export interface FunnelState {
@@ -46,9 +54,27 @@ export class WebFunnel {
     phoneNumber: "",
     isValid: false,
     title1: "",
-    title2: ""
+    title2: "",
+    category: "group"
   };
+  @Method()
+  async setData(data: FunnelState) {
+    this.state = { ...this.state, ...data };
+    if (data.category === "referral") {
+      this.injectSDK().then(() => {
+        this.loadMap();
+      });
+    }
+  }
+  @Event({ eventName: "submitFunnel" }) submitFunnel: EventEmitter;
   submitForm = () => {
+    if (!(this.apiUrl && this.savePhoneNumber)) {
+      this.submitFunnel.emit({
+        phoneNumber: this.state.phoneNumber,
+        token: this.getToken()
+      });
+      return;
+    }
     fetch(this.apiUrl + this.savePhoneNumber, {
       headers: {
         Accept: "application/json",
@@ -88,8 +114,9 @@ export class WebFunnel {
   }
   //componentWillLoad
   componentDidLoad() {
+    if (!(this.apiUrl && this.getInvitationInfo)) return;
     fetch(
-      this.apiUrl + this.getInvitationInfo + `/${this.getToken() || "referral"}`
+      this.apiUrl + this.getInvitationInfo + `/${this.getToken() || "group"}`
     )
       .then(res => res.json())
       .then(res => {
@@ -152,9 +179,11 @@ export class WebFunnel {
         : this.Event();
     return (
       <div>
-        <div class="text-center mt-2">
-          <img src={this.logoImgPath} alt="logo" class="mb-2" />
-        </div>
+        {this.logoImgPath && (
+          <div class="text-center mt-2">
+            <img src={this.logoImgPath} alt="logo" class="mb-2" />
+          </div>
+        )}
         {invitationInfo}
 
         <div>

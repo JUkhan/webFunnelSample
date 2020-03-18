@@ -16,6 +16,26 @@
 | `savePhoneNumber`   | `save-phone-number`   | api end point to save data (mobile number and user token number) | `string` | `undefined` |
 
 
+## Events
+
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `submitFunnel` |             | `CustomEvent<any>` |
+
+
+## Methods
+
+### `setData(data: FunnelState) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

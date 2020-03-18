@@ -19,14 +19,19 @@
   </head>
   <body>
     <div class="container">
-      <web-funnel
-        id="funnel"
-        logo-img-path="https://via.placeholder.com/150/92c952"
-        api-url="http://localhost:3000"
-        get-invitation-info="/getInvitationInfo"
-        save-phone-number="/savePhoneNumber"
-        map-api-key="AIzaSyCTGaIAe7IC5zYoEPFRMHVOKs5dIwAKlTE"
-      ></web-funnel>
+      <web-funnel id="funnel"></web-funnel>
     </div>
+    <script>
+      window.onload = () => {
+        var funnel = document.getElementById("funnel");
+        fetch("http://localhost:3000/getInvitationInfo/token-group")
+          .then(res => res.json())
+          .then(data => funnel.setData(data));
+
+        funnel.addEventListener("submit", ev => {
+          console.log(ev.detail);
+        });
+      };
+    </script>
   </body>
 </html>

@@ -7,7 +7,9 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  FunnelState,
+} from './components/web-funnel/web-funnel';
 
 export namespace Components {
   interface WebFunnel {
@@ -28,6 +30,7 @@ export namespace Components {
     * api end point to save data (mobile number and user token number)
     */
     'savePhoneNumber': string;
+    'setData': (data: FunnelState) => Promise<void>;
   }
 }
 
@@ -59,6 +62,7 @@ declare namespace LocalJSX {
     */
     'logoImgPath'?: string;
     'mapApiKey'?: string;
+    'onSubmitFunnel'?: (event: CustomEvent<any>) => void;
     /**
     * api end point to save data (mobile number and user token number)
     */

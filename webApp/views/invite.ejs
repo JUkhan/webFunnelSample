@@ -21,15 +21,21 @@
         <div
           class="col-sm-12 col-md-12 col-lg-6 col-xl-6 offset-lg-3 offset-xl-3"
         >
-          <web-funnel
-            logo-img-path="/images/logo.png"
-            api-url="http://localhost:3000"
-            get-invitation-info="/getInvitationInfo"
-            save-phone-number="/savePhoneNumber"
-            api-key="AIzaSyCTGaIAe7IC5zYoEPFRMHVOKs5dIwAKlTE"
-          ></web-funnel>
+          <web-funnel id="funnel"></web-funnel>
         </div>
       </div>
     </div>
+    <script>
+      window.onload = () => {
+        var funnel = document.getElementById("funnel");
+        fetch("http://localhost:3000/getInvitationInfo/group")
+          .then(res => res.json())
+          .then(data => funnel.setData(data));
+
+        funnel.addEventListener("submitFunnel", ev => {
+          console.log(ev.detail);
+        });
+      };
+    </script>
   </body>
 </html>
