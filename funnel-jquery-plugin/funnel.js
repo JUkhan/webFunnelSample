@@ -80,6 +80,7 @@
     el.append(form);
   }
   function renderGroup(el, data) {
+    setButtonText(el, "DOWNLOAD");
     var str = ` <div>
       <p class="text-center font-weight-bold mt-2">${data.title1}</p>
       <p class="text-center">${data.title2}</p>
@@ -87,6 +88,7 @@
     el.prepend($(str));
   }
   function renderReferral(el, data) {
+    setButtonText(el, "JOIN AND DOWNLOAD");
     var str = `<div>
         <p class="text-centerx font-weight-bold mt-2">
           <img class="image" src=${data.image}></img>
@@ -98,12 +100,16 @@
     el.prepend($(str));
   }
   function renderEvent(el, data) {
+    setButtonText(el, "RSVP AND DOWNLOAD");
     var str = `<div>
     <p class="text-center font-weight-bold mt-2">${data.title1}</p>
     <p>Other info goes here</p>
     <p class="text-center">${data.title2}</p>
   </div>`;
     el.prepend($(str));
+  }
+  function setButtonText(el, str) {
+    el.find("button").text(str);
   }
   $.fn.funnel = function(config) {
     var el = $(this);
