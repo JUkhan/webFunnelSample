@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="/funnel.js"></script>
+    <link href="/funnel.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="funnel-container"></div>
+    </div>
+    <script>
+      $(() => {
+        $("#funnel-container").funnel({
+          mapApiKey: "",
+          init: (obj, token) => {
+            $.get(
+              `http://localhost:2000/getInvitationInfo/${token}`
+            ).then(res => obj.setData(res));
+          },
+          submit: data => {
+            console.log(data);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

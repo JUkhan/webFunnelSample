@@ -41,4 +41,4 @@ app.post("/savePhoneNumber", function(req, res) {
   res.send({ msg: "save successfully" });
 });
 
-app.listen(3000, () => console.log("Listening on port 3000..."));
+app.listen(2000, () => console.log("Listening on port 2000..."));
