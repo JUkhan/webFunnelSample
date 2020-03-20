@@ -23,13 +23,18 @@ app.get("/getInvitationInfo/:token", (req, res) => {
     data.title1 = "John is inviting you to join kickit";
     data.title2 = "Checkout John's upcoming plans on the kickit app!";
     data.location = { lat: 23.8103, lng: 90.4125 };
-    data.image = "https://via.placeholder.com/50/24f355";
+    data.image = "/images/test.png";
     data.category = "referral";
   } else if (req.params.token.includes("event")) {
     data.title1 = 'You\'ve been invited to "Pregame"';
-    data.address = "address";
-    data.date = "date and time";
-    data.images = ["img1", "img2"];
+    data.address = "1103 Biscayne Blvd, Miami, FL 33132";
+    data.eventClass = "pregame";
+    data.date = new Date().toUTCString();
+    data.images = [
+      "https://via.placeholder.com/50/24f355",
+      "https://via.placeholder.com/50/24f355",
+      "https://via.placeholder.com/50/24f355"
+    ];
     data.title2 = "checkout when a,b,c are ariving to the event";
     data.category = "event";
   }
